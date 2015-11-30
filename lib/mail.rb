@@ -34,7 +34,6 @@ module Mail # :doc:
 
   require 'mail/string'
   require 'mail/core_extensions/nil'
-  require 'mail/core_extensions/object'
   require 'mail/core_extensions/string'
   require 'mail/core_extensions/smtp' if RUBY_VERSION < '1.9.3'
   require 'mail/indifferent_hash'
