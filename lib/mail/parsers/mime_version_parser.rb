@@ -3,7 +3,7 @@ module Mail::Parsers
     include Mail::Utilities
 
     def parse(s)
-      if StringHelper.blank?(s)
+      if Mail::StringHelper.blank?(s)
         return MimeVersionStruct.new("", nil)
       end
 

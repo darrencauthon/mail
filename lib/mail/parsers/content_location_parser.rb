@@ -2,7 +2,7 @@ module Mail::Parsers
   class ContentLocationParser
     def parse(s)
       content_location = ContentLocationStruct.new(nil)
-      if StringHelper.blank?(s)
+      if Mail::StringHelper.blank?(s)
         return content_location
       end
 

@@ -2,7 +2,7 @@ module Mail::Parsers
   class EnvelopeFromParser
     def parse(s)
       envelope_from = EnvelopeFromStruct.new
-      if StringHelper.blank?(s)
+      if Mail::StringHelper.blank?(s)
         return envelope_from
       end
 

@@ -4,7 +4,7 @@ module Mail::Parsers
 
     def parse(s)
       content_disposition = ContentDispositionStruct.new("", nil)
-      if StringHelper.blank?(s)
+      if Mail::StringHelper.blank?(s)
         return content_disposition
       end
 
