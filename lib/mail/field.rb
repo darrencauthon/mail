@@ -114,11 +114,11 @@ module Mail
     def initialize(name, value = nil, charset = 'utf-8')
       case
       when name.index(COLON)            # Field.new("field-name: field data")
-        @charset = value.blank? ? charset : value
+        @charset = StringHelper.blank?(value) ? charset : value
         @name = name[FIELD_PREFIX]
         @raw_value = name
         @value = nil
-      when value.blank?                 # Field.new("field-name")
+      when StringHelper.blank?(value)   # Field.new("field-name")
         @name = name
         @value = nil
         @raw_value = nil

@@ -9,9 +9,9 @@ module Mail
         string !~ /\S/
       else
         if string.respond_to?(:empty?)
-          empty?
+          string.empty?
         else
-          !self
+          !string
         end
       end
     end

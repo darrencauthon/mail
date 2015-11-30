@@ -41,7 +41,7 @@ module Mail
     def initialize(value = nil, charset = 'utf-8')
       self.charset = charset
       @uniq = 1
-      if value.blank?
+      if StringHelper.blank?(value)
         self.name = CAPITALIZED_FIELD
         self.value = generate_message_id
       else
