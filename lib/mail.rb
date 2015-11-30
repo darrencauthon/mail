@@ -32,6 +32,7 @@ module Mail # :doc:
 
   require 'mail/version'
 
+  require 'mail/string'
   require 'mail/core_extensions/nil'
   require 'mail/core_extensions/object'
   require 'mail/core_extensions/string'
