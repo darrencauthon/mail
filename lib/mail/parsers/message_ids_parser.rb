@@ -1,7 +1,7 @@
 module Mail::Parsers
   class MessageIdsParser
     def parse(s)
-      if s.blank?
+      if Mail::StringHelper.blank?(s)
         return MessageIdsStruct.new
       end
 
