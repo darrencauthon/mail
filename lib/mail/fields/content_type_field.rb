@@ -26,7 +26,7 @@ module Mail
     end
 
     def parse(val = value)
-      unless StringHelper.blank?(val)
+      unless Utilities.blank?(val)
         self.value = val
         @element = nil
         element

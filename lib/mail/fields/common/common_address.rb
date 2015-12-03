@@ -5,7 +5,7 @@ module Mail
   module CommonAddress # :nodoc:
       
     def parse(val = value)
-      unless StringHelper.blank?(val)
+      unless Utilities.blank?(val)
         @address_list = AddressList.new(encode_if_needed(val))
       else
         nil
@@ -84,10 +84,10 @@ module Mail
       case
       when val.nil?
         raise ArgumentError, "Need to pass an address to <<"
-      when StringHelper.blank?(val)
+      when Utilities.blank?(val)
         parse(encoded)
       else
-        self.value = [self.value, val].reject {|a| StringHelper.blank?(a) }.join(", ")
+        self.value = [self.value, val].reject {|a| Utilities.blank?(a) }.join(", ")
       end
     end
 
@@ -99,22 +99,22 @@ module Mail
     private
   
     def do_encode(field_name)
-      return '' if StringHelper.blank?(value)
+      return '' if Utilities.blank?(value)
       address_array = address_list.addresses.reject { |a| encoded_group_addresses.include?(a.encoded) }.compact.map { |a| a.encoded }
       address_text  = address_array.join(", \r\n\s")
       group_array = groups.map { |k,v| "#{k}: #{v.map { |a| a.encoded }.join(", \r\n\s")};" }
       group_text  = group_array.join(" \r\n\s")
-      return_array = [address_text, group_text].reject { |a| StringHelper.blank?(a) }
+      return_array = [address_text, group_text].reject { |a| Utilities.blank?(a) }
       "#{field_name}: #{return_array.join(", \r\n\s")}\r\n"
     end
 
     def do_decode
-      return nil if StringHelper.blank?(value)
+      return nil if Utilities.blank?(value)
       address_array = address_list.addresses.reject { |a| decoded_group_addresses.include?(a.decoded) }.map { |a| a.decoded }
       address_text  = address_array.join(", ")
       group_array = groups.map { |k,v| "#{k}: #{v.map { |a| a.decoded }.join(", ")};" }
       group_text  = group_array.join(" ")
-      return_array = [address_text, group_text].reject { |a| StringHelper.blank?(a) }
+      return_array = [address_text, group_text].reject { |a| Utilities.blank?(a) }
       return_array.join(", ")
     end
 

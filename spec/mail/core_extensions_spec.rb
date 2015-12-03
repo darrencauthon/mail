@@ -5,45 +5,45 @@ describe Object do
 
   describe "blank method" do
     it "should say nil is blank" do
-      expect(Mail::StringHelper.blank?(nil)).to be_truthy
+      expect(Mail::Utilities.blank?(nil)).to be_truthy
     end
 
     it "should say false is blank" do
-      expect(Mail::StringHelper.blank?(false)).to be_truthy
+      expect(Mail::Utilities.blank?(false)).to be_truthy
     end
 
     it "should say true is not blank" do
-      expect(Mail::StringHelper.blank?(true)).not_to be_truthy
+      expect(Mail::Utilities.blank?(true)).not_to be_truthy
     end
 
     it "should say an empty array is blank" do
-      expect(Mail::StringHelper.blank?([])).to be_truthy
+      expect(Mail::Utilities.blank?([])).to be_truthy
     end
 
     it "should say an empty hash is blank" do
-      expect(Mail::StringHelper.blank?({})).to be_truthy
+      expect(Mail::Utilities.blank?({})).to be_truthy
     end
 
     it "should say an empty string is blank" do
-      expect(Mail::StringHelper.blank?('')).to be_truthy
-      expect(Mail::StringHelper.blank?(" ")).to be_truthy
+      expect(Mail::Utilities.blank?('')).to be_truthy
+      expect(Mail::Utilities.blank?(" ")).to be_truthy
       a = ''; 1000.times { a << ' ' }
-      expect(Mail::StringHelper.blank?(a)).to be_truthy
-      expect(Mail::StringHelper.blank?("\t \n\n")).to be_truthy
+      expect(Mail::Utilities.blank?(a)).to be_truthy
+      expect(Mail::Utilities.blank?("\t \n\n")).to be_truthy
     end
   end
 
   describe "not blank method" do
     it "should say a number is not blank" do
-      expect(Mail::StringHelper.blank?(1)).not_to be_truthy
+      expect(Mail::Utilities.blank?(1)).not_to be_truthy
     end
     
     it "should say a valueless hash is not blank" do
-      expect(Mail::StringHelper.blank?({:one => nil, :two => nil})).not_to be_truthy
+      expect(Mail::Utilities.blank?({:one => nil, :two => nil})).not_to be_truthy
     end
     
     it "should say a hash containing an empty hash is not blank" do
-      expect(Mail::StringHelper.blank?({:key => {}})).not_to be_truthy
+      expect(Mail::Utilities.blank?({:key => {}})).not_to be_truthy
     end
   end
 

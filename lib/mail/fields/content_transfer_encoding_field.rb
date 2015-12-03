@@ -18,7 +18,7 @@ module Mail
     end
     
     def parse(val = value)
-      unless StringHelper.blank?(val)
+      unless Utilities.blank?(val)
         @element = Mail::ContentTransferEncodingElement.new(val)
       end
     end
