@@ -227,9 +227,9 @@ module Mail
     # 
     # This logic is mostly shared with ActiveSupport's blank?
     def self.blank?(string)
-      if string.is_a?(NilClass)
+      if string.kind_of?(NilClass)
         true
-      elsif string.is_a?(String)
+      elsif string.kind_of?(String)
         string !~ /\S/
       else
         if string.respond_to?(:empty?)
