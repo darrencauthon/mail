@@ -232,11 +232,7 @@ module Mail
       elsif value.kind_of?(String)
         value !~ /\S/
       else
-        if value.respond_to?(:empty?)
-          value.empty?
-        else
-          !value
-        end
+        value.respond_to?(:empty?) ? value.empty? : !value
       end
     end
 
