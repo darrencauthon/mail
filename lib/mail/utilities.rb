@@ -226,16 +226,16 @@ module Mail
     # and arrays and hashes that have nothing in them.
     # 
     # This logic is mostly shared with ActiveSupport's blank?
-    def self.blank?(string)
-      if string.kind_of?(NilClass)
+    def self.blank?(value)
+      if value.kind_of?(NilClass)
         true
-      elsif string.kind_of?(String)
-        string !~ /\S/
+      elsif value.kind_of?(String)
+        value !~ /\S/
       else
-        if string.respond_to?(:empty?)
-          string.empty?
+        if value.respond_to?(:empty?)
+          value.empty?
         else
-          !string
+          !value
         end
       end
     end
