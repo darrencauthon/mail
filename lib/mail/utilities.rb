@@ -1,6 +1,9 @@
 # encoding: utf-8
 module Mail
   module Utilities
+
+    LF   = "\n"
+
     include Constants
 
     # Returns true if the string supplied is free from characters not allowed as an ATOM
@@ -217,6 +220,11 @@ module Mail
 
       def map_with_index( enum, &block )
         enum.each_with_index.map(&block)
+      end
+
+      def self.to_lf input
+        input.kind_of?(String) ? input.to_str.gsub(/\r\n|\r/, LF)
+                               : ''
       end
 
     end

@@ -18,7 +18,7 @@ class String #:nodoc:
   end
 
   def to_lf
-    to_str.gsub(/\r\n|\r/, LF)
+    ::Mail::Utilities.to_lf self
   end
 
   unless String.instance_methods(false).map {|m| m.to_sym}.include?(:blank?)
