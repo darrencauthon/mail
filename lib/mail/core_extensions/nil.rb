@@ -12,8 +12,4 @@ class NilClass #:nodoc:
   def to_crlf
     ''
   end
-
-  def to_lf
-    ::Mail::Utilities.to_lf self
-  end
 end

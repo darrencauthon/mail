@@ -17,10 +17,6 @@ class String #:nodoc:
     to_str.gsub(CRLF_REGEX, CRLF)
   end
 
-  def to_lf
-    ::Mail::Utilities.to_lf self
-  end
-
   unless String.instance_methods(false).map {|m| m.to_sym}.include?(:blank?)
     def blank?
       self !~ /\S/
