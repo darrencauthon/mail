@@ -12,7 +12,7 @@ module Mail
       
       # Decode the string
       def self.decode(str)
-        str.to_lf
+        ::Mail::Utilities.to_lf str
       end
     
       # Encode the string
