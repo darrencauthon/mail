@@ -223,8 +223,7 @@ module Mail
       end
 
       def self.to_lf input
-        input.kind_of?(String) ? input.to_str.gsub(/\r\n|\r/, LF)
-                               : ''
+        input.kind_of?(String) ? input.to_str.gsub(/\r\n|\r/, LF) : ''
       end
 
     end
