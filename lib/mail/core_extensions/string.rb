@@ -1,9 +1,6 @@
 # encoding: utf-8
 class String #:nodoc:
 
-  CRLF = "\r\n"
-  LF   = "\n"
-
   unless String.instance_methods(false).map {|m| m.to_sym}.include?(:blank?)
     def blank?
       self !~ /\S/
