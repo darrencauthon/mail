@@ -1,12 +1,6 @@
 # encoding: utf-8
 class String #:nodoc:
 
-  unless String.instance_methods(false).map {|m| m.to_sym}.include?(:blank?)
-    def blank?
-      self !~ /\S/
-    end
-  end
-
   unless method_defined?(:ascii_only?)
     # Backport from Ruby 1.9 checks for non-us-ascii characters.
     def ascii_only?
