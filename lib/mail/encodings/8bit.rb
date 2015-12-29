@@ -17,7 +17,7 @@ module Mail
     
       # Encode the string
       def self.encode(str)
-        str.to_crlf
+        ::Mail::Utilities.to_crlf str
       end
      
       # Idenity encodings have a fixed cost, 1 byte out per 1 byte in
