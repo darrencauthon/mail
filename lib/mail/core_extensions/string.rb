@@ -4,10 +4,6 @@ class String #:nodoc:
   CRLF = "\r\n"
   LF   = "\n"
 
-  def to_crlf
-    ::Mail::Utilities.to_crlf self
-  end
-
   unless String.instance_methods(false).map {|m| m.to_sym}.include?(:blank?)
     def blank?
       self !~ /\S/

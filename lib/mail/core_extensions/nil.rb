@@ -8,8 +8,4 @@ class NilClass #:nodoc:
       true
     end
   end
-
-  def to_crlf
-    ::Mail::Utilities.to_crlf self
-  end
 end

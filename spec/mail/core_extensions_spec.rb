@@ -47,30 +47,4 @@ describe Object do
     end
   end
 
-  describe "to_crlf method on String" do
-    it "should clean just lf to crlf" do
-      expect("\n".to_crlf).to eq "\r\n"
-    end
-
-    it "should clean just cr to crlf" do
-      expect("\r".to_crlf).to eq "\r\n"
-    end
-
-    it "should leave crlf as crlf" do
-      expect("\r\n".to_crlf).to eq "\r\n"
-    end
-
-    it "should handle japanese characters" do
-      string = "\343\201\202\343\201\210\343\201\206\343\201\210\343\201\212\r\n\r\n\343\201\213\343\201\215\343\201\217\343\201\221\343\201\223\r\n\r\n\343\201\225\343\201\227\343\201\244\343\201\233\343\201\235\r\n\r\n"
-      expect(string.to_crlf).to eq "\343\201\202\343\201\210\343\201\206\343\201\210\343\201\212\r\n\r\n\343\201\213\343\201\215\343\201\217\343\201\221\343\201\223\r\n\r\n\343\201\225\343\201\227\343\201\244\343\201\233\343\201\235\r\n\r\n"
-    end
-    
-  end
-
-  describe "methods on NilClass" do
-    it "should return empty string on to_crlf" do
-      expect(nil.to_crlf).to eq ''
-    end
-  end
-
 end
